@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anas — Links</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --bg: #0b0b0d;
+  --card: #141417;
+  --muted: #a8a8a8;
+  --accent: #7c5cff;
+  --radius: 16px;
+  --hover-shadow: rgba(124,92,255,0.2);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: linear-gradient(180deg,#070707 0%, #121214 100%);
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+.shell { width: 100%; max-width: 460px; }
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: enter .45s forwards;
+}
+@keyframes enter { to { opacity:1; transform:none; } }
+
+/* CENTERED HEADER */
+header {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:8px;
+}
+.avatar {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid rgba(255,255,255,0.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+.name { font-weight:700; font-size:20px; }
+.handle { margin-top:4px; color:var(--muted); font-size:14px; }
+.bio { color: var(--muted); font-size:13px; margin-top:4px; }
+
+.links { margin-top:10px; display:grid; gap:12px; }
+.btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px;
+  border-radius:12px;
+  background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.03);
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition: transform .16s ease, box-shadow .16s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px var(--hover-shadow); }
+.btn:active { transform: translateY(1px); }
+.btn .label { flex:1; text-align:center; }
+.btn .icon { width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:18px; opacity:0.9; }
+
+.small-row" style="justify-content:center" { display:flex; gap:10px; align-items:center; justify-content:center; margin-top:14px; }
+.qr-box { display:flex; align-items:center; gap:10px; background: rgba(255,255,255,0.03); padding:8px; border-radius:12px; border:1px solid rgba(255,255,255,0.03); cursor:pointer; }
+.qr-box img { width:54px; height:54px; border-radius:8px; }
+.muted { color:var(--muted); font-size:13px; }
+footer { margin-top:10px; display:flex; justify-content:center; }
+.copy-btn { background:transparent; border:1px dashed rgba(255,255,255,0.04); padding:8px 12px; border-radius:10px; color:var(--muted); font-size:13px; cursor:pointer; transition:all .2s; }
+.copy-btn:hover { background: rgba(255,255,255,0.05); }
+
+#qr-modal { position:fixed; inset:0; background:linear-gradient(rgba(2,6,23,0.82), rgba(2,6,23,0.92)); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .18s; }
+#qr-modal.open { opacity:1; pointer-events:auto; }
+.qr-card { background:var(--bg); padding:20px; border-radius:14px; border:1px solid rgba(255,255,255,0.03); display:flex; flex-direction:column; align-items:center; gap:12px; }
+.qr-card img { width:280px; height:280px; background:#fff; padding:8px; border-radius:12px; }
+.qr-actions { display:flex; gap:10px; }
+.btn-white { background:#fff; color:#0b0b0d; padding:8px 12px; border-radius:10px; font-weight:700; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <main class="card" role="main">
+    <header>
+      <div class="avatar"><img src="profile.jpg" alt="Anas Ahmed"></div>
+      <div class="name">Anas Ahmed</div>
+      
+      <div class="bio">IT & Data Entry</div>
+    </header>
+
+    <section class="links">
+      <a class="btn" href="https://www.linkedin.com/in/anas-ahmed-834255292/" target="_blank"><span class="label">LinkedIn</span><span class="icon"><i class="fab fa-linkedin"></i></span></a>
+      <a class="btn" href="https://github.com/El-Torky" target="_blank"><span class="label">GitHub</span><span class="icon"><i class="fab fa-github"></i></span></a>
+      <a class="btn" href="https://wa.me/201220572439" target="_blank"><span class="label">WhatsApp</span><span class="icon"><i class="fab fa-whatsapp"></i></span></a>
+      <a class="btn" href="https://www.facebook.com/anas.ahmed.831681" target="_blank"><span class="label">Facebook</span><span class="icon"><i class="fab fa-facebook"></i></span></a>
+      <a class="btn" href="https://www.instagram.com/anas.a.torky/" target="_blank"><span class="label">Instagram</span><span class="icon"><i class="fab fa-instagram"></i></span></a>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
